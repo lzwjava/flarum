@@ -8,4 +8,5 @@ server
 core
 studio.json
 composer.lock
+storage/flarum*.sqlite*
 

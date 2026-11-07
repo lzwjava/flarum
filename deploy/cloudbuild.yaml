@@ -1,0 +1,20 @@
+steps:
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      - 'build'
+      - '-f'
+      - 'deploy/Dockerfile'
+      - '-t'
+      - 'us-central1-docker.pkg.dev/${_PROJECT}/flarum/flarum:${_TAG}'
+      - '-t'
+      - 'us-central1-docker.pkg.dev/${_PROJECT}/flarum/flarum:latest'
+      - '.'
+substitutions:
+  _PROJECT: graphite-ally-445108-k3
+  _TAG: v1.0.0
+images:
+  - 'us-central1-docker.pkg.dev/${_PROJECT}/flarum/flarum:latest'
+  - 'us-central1-docker.pkg.dev/${_PROJECT}/flarum/flarum:${_TAG}'
+options:
+  machineType: 'E2_HIGHCPU_8'
+  logging: 'CLOUD_LOGGING_ONLY'

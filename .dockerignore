@@ -1,0 +1,10 @@
+.git
+.gitignore
+.github
+vendor
+config.php
+node_modules
+npm-debug.log
+storage/flarum*.sqlite*
+*.md
+CHANGELOG.md
